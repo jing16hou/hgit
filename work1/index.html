@@ -7,4 +7,30 @@
 	<body>
 		练习git
 	</body>
+	
+	<ul class="list-side">
+	　　<li><a target="a.html" >about</a></li>
+	　　<li><a target="b.html" >news</a></li>
+	　　<li><a target="c.html" >product</a></li>
+	　　<li><a href="http://ucmic.blogspot.com/" target="_blank" >contact</a></li>
+	</ul>
+	 
+	<div id="iframe">
+	　　<!--jquery 插入html 位址-->
+	</div>
+	<script>
+		$(function(){
+		　　$('.list-side li').click(function() {
+		  　　// 找出 li 中的超链接 href(#id)
+		 　　　　var $this = $(this),
+		 　　　　_clickTab = $this.find('a').attr('target'); // 找到链接a中的targer的值
+		 　　　　$.get(_clickTab,function(data){
+		 　　　　　　$("#iframe").html(data);
+		 　　　　});
+		　　});
+		});
+	</script>
+	
+
+
 </html>
